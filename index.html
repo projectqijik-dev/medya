@@ -373,7 +373,107 @@
 
         .mini-card { background: rgba(255,255,255,0.03); border: 1px solid var(--gold-muted); padding: 15px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 10px; }
         .mini-card strong { color: var(--gold); display: block; margin-bottom: 5px; }
+        /* Podcast Stilleri */
+.podcast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
 
+.podcast-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--gold-muted);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.podcast-card:hover {
+    background: rgba(212,175,55,0.05);
+    border-color: rgba(212,175,55,0.5);
+}
+
+.podcast-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.podcast-number {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    background: rgba(212,175,55,0.15);
+    padding: 4px 12px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+}
+
+.podcast-duration {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.podcast-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin: 10px 0 12px 0;
+}
+
+.podcast-description {
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.podcast-player {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 30px;
+    background: #1a1a1a;
+    outline: none;
+}
+
+/* audio etiketini altın temasına yaklaştırma */
+.podcast-player::-webkit-media-controls-panel {
+    background-color: #1e1e1e;
+}
+.podcast-player::-webkit-media-controls-current-time-display,
+.podcast-player::-webkit-media-controls-time-remaining-display {
+    color: var(--gold);
+}
+.podcast-player::-webkit-media-controls-play-button {
+    background-color: var(--gold);
+    border-radius: 50%;
+}
+
+.podcast-credit {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-gray);
+    text-align: right;
+    margin-top: 10px;
+    border-top: 1px solid var(--gold-muted);
+    padding-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .podcast-title {
+        font-size: 1.1rem;
+    }
+    .podcast-card {
+        padding: 18px;
+    }
+}
         /* AKORDİYON STİLLERİ */
         details {
             background: rgba(212, 175, 55, 0.02);
@@ -588,8 +688,9 @@
                     <i class="fa-solid fa-chevron-down nav-arrow"></i>
                 </div>
                 <div class="nav-sub-items open">
-                    <a href="#safety" class="nav-link nav-sub">5.1 Güvenlik Rehberi</a>
-                    <a href="#concepts" class="nav-link nav-sub">5.2 Dijital Sözlük</a>
+                    <a href="#podcasts" class="nav-link nav-sub">5.1 Podcastler</a>
+					<a href="#safety" class="nav-link nav-sub">5.2 Güvenlik Rehberi</a>
+                    <a href="#concepts" class="nav-link nav-sub">5.3 Dijital Sözlük</a>
                 </div>
             </div>
 
@@ -1295,6 +1396,7 @@
             <li>Deepfake ile gerçekleştirilebilecek siber saldırılara karşı savunma yöntemlerinin geliştirilmesi</li>
         </ul>
         <p>gibi çeşitli önlemler alabilirler.</p>
+		<p class="source">Kaynak: <a href="https://www.kvkk.gov.tr/SharedFolderServer/CMSFiles/015794c4-061b-4560-a0b2-e372ee536642.pdf" target="_blank" rel="noopener noreferrer">https://www.kvkk.gov.tr/SharedFolderServer/CMSFiles/015794c4-061b-4560-a0b2-e372ee536642.pdf</a></p>
     </div>
 </section>
 
@@ -1318,15 +1420,15 @@
         <h3>Hangi Eylemler Siber Zorbalık Kapsamına Girer?</h3>
         <p>Aşağıda siber zorbalık kapsamına giren davranışlar sıralanmıştır. Çevrimiçi ortamlarda kendiniz, bir yakınınız veya çocuğunuz bu durumlara maruz kalıyorsa siber zorbalıkla karşı karşıyasınız demektir.</p>
         <ul>
-            <li><strong>Dedikodu</strong>: Kamuoyunda spekülasyon oluşturma. Çevrimiçi ortamlarda hakkınızda kasıtlı ve alenen dedikodu yapılması.</li>
-            <li><strong>Dışlama</strong>: Bir grup arkadaştan bir kişiyi ayırma. Özellikle okulda başlayan ve siber ortamda devam eden dışlanma.</li>
-            <li><strong>Taciz</strong>: Sürekli ve kasıtlı olarak yapılan zarar verici ve rahatsız edici davranışlar.</li>
-            <li><strong>Takip</strong>: Her an izlenildiğini hissetme. İnternette başlayıp, gerçek hayata yansıyan takip ediliyormuş hissi.</li>
-            <li><strong>Trollemek</strong>: Kasten ve maksatlı olarak yapılan provokasyon (kışkırtma) ve örtülü hakaret, sabote.</li>
-            <li><strong>Yorumlar</strong>: Yazı, fotoğraf, video yoluyla yapılan hakaret ve küfür içeren negatif iletiler. Saygısızlık: İletişimde haddi aşmak ve bunu devam ettirmek.</li>
-            <li><strong>Sahte Hesap</strong>: Kurban adına sahte hesaplar oluşturarak ve bu oluşturulan sahte hesaplar yoluyla tehdit ve zorbalığı sürdürmek.</li>
-            <li><strong>Kandırma</strong>: Başkalarının çeşitli, gizli bilgilerini yayınlayarak ve bunları çarpıtarak insanları aldatmak, dolandırmak.</li>
-            <li><strong>Manipüle</strong>: Kurbanın kendisi gibi davranmak.</li>
+            <li><span class="highlight">Dedikodu:</span> Kamuoyunda spekülasyon oluşturma. Çevrimiçi ortamlarda hakkınızda kasıtlı ve alenen dedikodu yapılması.</li>
+            <li><span class="highlight">Dışlama:</span> Bir grup arkadaştan bir kişiyi ayırma. Özellikle okulda başlayan ve siber ortamda devam eden dışlanma.</li>
+            <li><span class="highlight">Taciz:</span> Sürekli ve kasıtlı olarak yapılan zarar verici ve rahatsız edici davranışlar.</li>
+            <li><span class="highlight">Takip:</span> Her an izlenildiğini hissetme. İnternette başlayıp, gerçek hayata yansıyan takip ediliyormuş hissi.</li>
+            <li><span class="highlight">Trollemek:</span> Kasten ve maksatlı olarak yapılan provokasyon (kışkırtma) ve örtülü hakaret, sabote.</li>
+            <li><span class="highlight">Yorumlar:</span> Yazı, fotoğraf, video yoluyla yapılan hakaret ve küfür içeren negatif iletiler. Saygısızlık: İletişimde haddi aşmak ve bunu devam ettirmek.</li>
+            <li><span class="highlight">Sahte (Fake) Hesap:</span> Kurban adına sahte hesaplar oluşturarak ve bu oluşturulan sahte hesaplar yoluyla tehdit ve zorbalığı sürdürmek.</li>
+            <li><span class="highlight">Kandırma:</span> Başkalarının çeşitli, gizli bilgilerini yayınlayarak ve bunları çarpıtarak insanları aldatmak, dolandırmak.</li>
+            <li><span class="highlight">Manipüle Etme</span> Kurbanın kendisi gibi davranmak.</li>
         </ul>
 
         <h3>Siber Zorbalıktan Korunmanın İpuçları Nelerdir?</h3>
@@ -1358,7 +1460,7 @@
                 
                 <!-- Vaka 1 - Göçmen Suçu -->
                 <details>
-                    <summary><span class="accordion-title">Vaka Senaryosu 1: Göçmen Suçu (Toplumsal Olay)</span></summary>
+                    <summary><span class="accordion-title">Vaka Senaryosu 1: "Göçmen Suçu" (Toplumsal Olay)</span></summary>
                     <div class="accordion-content">
                         
                         <div class="timeline-item">
@@ -1496,7 +1598,7 @@
 
                 <!-- Vaka 2 - Mucizevi İlaç -->
                 <details>
-                    <summary><span class="accordion-title">Vaka Senaryosu 2: "Mucizevi İlaç" - Sağlık Kriziyle Sonuçlanan Olay</span></summary>
+                    <summary><span class="accordion-title">Vaka Senaryosu 2: "Mucizevi İlaç" (Dezenformasyon)</span></summary>
                     <div class="accordion-content">
                         
                         <div class="timeline-item">
@@ -1600,7 +1702,7 @@
 
                 <!-- Vaka 3 - Deprem Yardım Çağrısı (Mezenformasyon) -->
                 <details>
-                    <summary><span class="accordion-title">Vaka Senaryosu 3: "Deprem Yardım Çağrısı" - İyi Niyet, Kötü Sonuç</span></summary>
+                    <summary><span class="accordion-title">Vaka Senaryosu 3: "Deprem Yardım Çağrısı" (Mezenformasyon)</span></summary>
                     <div class="accordion-content">
                         <div class="timeline-item">
                             <div class="timeline-time"><i class="fa-regular fa-clock"></i> GÜN 1 – SAAT 04:17</div>
@@ -1713,6 +1815,229 @@
                         </div>
                     </div>
                 </details>
+				<!-- Vaka 5 - "Müdür Böyle Dedi" — Bir Öğretmenin Kariyer Cinayeti -->
+<details>
+    <summary><span class="accordion-title">Vaka Senaryosu 4: "Müdür Böyle Dedi" (DeepFake)</span></summary>
+    <div class="accordion-content">
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> CUMA – SAAT 21:03</div>
+            <h3>Ses Kaydı Okul WhatsApp Grubuna Düşüyor</h3>
+            <p><span class="actor-badge">WHATSAPP</span> 52 saniyelik bir ses kaydı, önce okul veliler grubuna, ardından öğretmenler grubuna, son olarak öğrencilerin kendi gruplarına düşer. Kaydın, <strong>18 yıllık müdür yardımcısı Ahmet Kahraman’a</strong> ait olduğu iddia edilmektedir. Kayıt, bazı öğrenciler ve veliler hakkında son derece ağır, aşağılayıcı ve kişisel hakaret içeren ifadeler barındırmaktadır. Ses tonu, aksanı ve konuşma ritmi Ahmet Kahraman ile birebir uyuşmaktadır.</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">52 sn.</span> <span class="stat-label">Ses kaydı</span></div>
+                <div class="stat-item"><span class="stat-number">3</span> <span class="stat-label">Farklı WhatsApp grubu</span></div>
+                <div class="stat-item"><span class="stat-number">630+</span> <span class="stat-label">İlk dinlenme sayısı</span></div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> SAAT 21:45</div>
+            <h3>Sosyal Medyaya Taşınıyor</h3>
+            <p><span class="actor-badge">X (TWITTER)</span> Bir veli kaydı X’te paylaşır: <em>“Çocuklarımızın müdürü böyle konuşuyor. Bu kişi okul yönetiminde olamaz.”</em> Kayıt 40 dakika içinde <strong>12.000 dinlenmeye</strong> ulaşır. Velilerin bir kısmı sert bildirgeler yazarken, diğerleri “Bu ses tanındı, Ahmet Bey bu” yorumlarını arka arkaya paylaşır. Doğrulama yapılmamıştır.</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">12.000</span> <span class="stat-label">Dinlenme</span></div>
+                <div class="stat-item"><span class="stat-number">40 dk.</span> <span class="stat-label">Yayılma süresi</span></div>
+                <div class="stat-item"><span class="stat-number">0</span> <span class="stat-label">Doğrulama</span></div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> SAAT 22:30</div>
+            <h3>Ahmet Kahraman Durumu Öğreniyor</h3>
+            <p><span class="actor-badge">MAĞDUR</span> Ahmet Kahraman, eşinin “Bu sen misin?” sorusuyla gösterdiği WhatsApp mesajıyla olayı öğrenir. Kaydı dinler; yüzünde beklenmedik bir etki oluşur: ses kendisine ait gibi gelir. Tonlama, konuşma hızı, aksanı tanır. <em>“Bu benim sesim ama bu sözleri ben hiç söylemedim.”</em></p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> CUMARTESİ – SAAT 09:00</div>
+            <h3>Okul Müdürü Görevden Uzaklaştırıyor</h3>
+            <p><span class="actor-badge">İLÇE MİLLÎ EĞİTİM MÜDÜRLÜĞÜ</span> Sosyal medyadaki yayılım nedeniyle Ahmet Kahraman’ı “inceleme süreci tamamlanana kadar” idari izne ayırır. 18 yıllık deneyimli bir öğretmen, bir sabah içinde ofisini boşaltır.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> CUMARTESİ – SAAT 14:00</div>
+            <h3>Dijital Ses Analizi</h3>
+            <p><span class="actor-badge">ADLİ BİLİŞİM</span> Ahmet Kahraman’ın avukatı, Ankara’daki bir ses analizi uzmanına başvurur. Uzman 3 saat içinde bulgularını iletir:</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">Anormal frekans düzleşmesi</span> <span class="stat-label">Yapay düzleşme noktaları</span></div>
+                <div class="stat-item"><span class="stat-number">Sıfır doğal titreme</span> <span class="stat-label">Jitter / shimmer değerleri</span></div>
+                <div class="stat-item"><span class="stat-number">YZ sentezi</span> <span class="stat-label">Sosyal medya videolarından klonlanmış</span></div>
+            </div>
+            <p>Uzman raporu: Kaydın frekans spektrumu doğal konuşmada bulunmayan yapay düzleşme noktaları içeriyor. Bazı hecelerde doğal ses titremesinin (jitter ve shimmer değerlerinin) neredeyse sıfıra düştüğü tespit edildi. Kullanılan YZ modeli, büyük olasılıkla Kahraman’ın sosyal medya videolarından elde edilen ses örnekleriyle eğitilmiş. Kaydın hazırlanmasının yaklaşık 2-4 saat süreceği tahmin edildi.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZARTESİ – SAAT 10:00</div>
+            <h3>Resmî Yalanlamaya Rağmen</h3>
+            <p><span class="actor-badge">RESMÎ AÇIKLAMA</span> İlçe MEM, ses analizine dayanarak Ahmet Kahraman’ın görevine iade edildiğini açıklar. Konu yerel basında yer alır. Ancak sosyal medyada durum farklıdır: ilk paylaşımların altındaki yorumlar <em>“Kaydı doğruladınız mı?”</em> sorusuna <em>“Kendisi itiraf etti zaten”</em> cevabını almaya devam eder. Birden fazla veli çocuğunu okuldan almıştır.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> HASAR RAPORU</div>
+            <h3>Sonuçlar ve Toplumsal Etki</h3>
+            <div class="impact-grid">
+                <div class="impact-card"><i class="fa-solid fa-user"></i> <strong>Ahmet Kahraman:</strong> 11 gün görevden uzak kaldı. Mahalle esnafının yanında durmayan bakışlarına maruz kaldı. Eşinin işi bulunan şehirde sosyal çevreleri zedelendi. “Sesin tam olarak bana ait olmadığı bir zaman dilimine kadar hiç kimse bana inanmadı.”</div>
+                <div class="impact-card"><i class="fa-solid fa-school"></i> <strong>Okul:</strong> 7 öğrenci velisi tarafından başka okullara nakledildi. Okul yönetimine duyulan güven sarsıldı.</div>
+                <div class="impact-card"><i class="fa-solid fa-scale-balanced"></i> <strong>Fail:</strong> Belirli bir velinin, okulun bir kararına itiraz etmek için rekabet amacıyla hazırlattığı anlaşıldı. Savcılığa suç duyurusunda bulunuldu; <strong>TCK 125 (hakaret), TCK 134 (özel hayat gizliliği ihlali) ve TCK 286</strong> kapsamında soruşturma başlatıldı.</div>
+                <div class="impact-card"><i class="fa-solid fa-chart-line"></i> <strong>Ses kaydı:</strong> Göreve iade haberi 3.200 etkileşim alırken, sahte ses kaydı <strong>74.000 kez</strong> dinlenmiş durumda. Düzeltme, sahte içeriğin yanında gölgede kaldı.</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> DEEPFAKE / YZ NASIL İKNA ETTİ?</div>
+            <h3>Vakanın Bileşenleri</h3>
+            <div class="impact-grid">
+                <div class="impact-card"><i class="fa-solid fa-microphone-lines"></i> <strong>Ses Tanınırlığının Yıkılması:</strong> İnsanlar tanınmış bir sesi duyduğunda inanma eğilimindedir; ses YZ’si bu sezgisel güveni tam hedefler.</div>
+                <div class="impact-card"><i class="fa-solid fa-database"></i> <strong>Açık Profil Hammaddesi:</strong> Sosyal medyadaki açık profil videoları ve ses örnekleri, YZ’nin bir kişiyi klonlaması için yeterli hammaddeyi sunar.</div>
+                <div class="impact-card"><i class="fa-solid fa-face-angry"></i> <strong>Duygusal Tetikleyici İçerik:</strong> Çocuklarını aşağılayan bir yönetici ifadesi, en duygusal tepkiye zemin hazırlar; doğrulama için süre bırakmaz.</div>
+                <div class="impact-card"><i class="fa-solid fa-users"></i> <strong>Platform Onaylama Yanılsaması:</strong> Birden fazla farklı gruptan birbirine eklenmiş onaylar, kayda meşru bir sosyal kanıt kılıfı biçer.</div>
+                <div class="impact-card"><i class="fa-solid fa-chart-simple"></i> <strong>Düzeltmenin Asimetrik Yayılımı:</strong> Sahte kayıt ve düzelti arasındaki 74.000’e 3.200 oranı, dijital yalanlamanın yapısal sınırını gözler önüne serer.</div>
+            </div>
+        </div>
+
+        <div class="fact-panel" style="margin-top: 40px;">
+            <h4 style="color: var(--gold); font-family: 'Cinzel', serif; margin-bottom: 15px;"><i class="fa-solid fa-check-circle"></i> Doğru Adımlar</h4>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;">✅ Bir ses kaydının sahte olup olmadığını anlamak için herkesin erişimine açık <strong>InVID, FakeCatcher veya Adobe Content Authenticity</strong> gibi araçları kullan.</li>
+                <li style="margin-bottom: 10px;">✅ Kaydı paylaşan hesabı incele: ne zaman açılmış, tarafsız mı, daha önce benzer içerik paylaşmış mı?</li>
+                <li style="margin-bottom: 10px;">✅ Özellikle çocukları, öğretmenleri veya kamu görevlilerini hedef alan ses veya video iddiaları için resmî açıklama çıkana kadar paylaşmaktan kaçın.</li>
+                <li style="margin-bottom: 10px;">✅ Kaynaktan emin olmadığın bir içerik seni duygusal olarak kışkırtıyorsa bu tam da manipülasyon için tasarlanmış bir işarettir.</li>
+                <li style="margin-bottom: 10px;">✅ Yanlış paylaştıysan aynı mecrada ve aynı etkiyle düzeltme yap; “ben de inanmıştım” notuyla küçük bir yorum yetmez.</li>
+            </ul>
+            <div style="margin-top: 20px;">
+                <h4 style="color: #ff6b6b; font-family: 'Cinzel', serif; margin-bottom: 15px;"><i class="fa-solid fa-circle-xmark"></i> Yanlış Adımlar</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">❌ “Ses aynen aynıydı, sahte olamaz” diyerek sezgisel tanınırlığa güvenmek.</li>
+                    <li style="margin-bottom: 10px;">❌ Düzeltme haberi çıkınca “sonuçta doğru olsaydı ne olurdu” diyerek geçiştirmek.</li>
+                    <li style="margin-bottom: 10px;">❌ Sahte içeriği “uyarı amaçlı” da olsa doğrulama yapmadan paylaşmak.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box" style="margin-top: 30px;">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> UNUTMAYIN</h4>
+            <p><strong>Bir insanın sesi artık onun söylediklerinin kanıtı sayılamaz.</strong> YZ ses klonlama teknolojisi, halka açık birkaç dakikalık ses örneğinden inandırıcı sahte konuşmalar üretebilmektedir. Bu gerçek, herkesi potansiyel bir deepfake mağduru yapmaktadır: bir öğretmeni, bir aile büyüğünü, bir arkadaşınızı. <strong>Ses duymak yetmez; kaynağı sorgulamak, doğrulamak ve 48 saat beklemek artık bir zorunluluktur.</strong></p>
+        </div>
+
+    </div>
+</details>
+				<!-- Vaka 4 - "Seni Bulacağız" — Oyuncu Kimliğini Yıkma ve Doxxing -->
+<details>
+    <summary><span class="accordion-title">Vaka Senaryosu 5: "Seni Bulacağız!" (Siber Zorbalık)</span></summary>
+    <div class="accordion-content">
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> CUMARTESİ – SAAT 22:47</div>
+            <h3>Turnuva Sonrası İlk Mesajlar</h3>
+            <p><span class="actor-badge">@Baran_Sahin_YT</span> (11.000 abone) yerel bir espor turnuvasında takım kaptanı olarak birincilik alır. Eve döndüğünde YouTube kanalında bir yorum dikkatini çeker: <em>“Hak etmedin. Hileci. Yarına öğrenirsin.”</em> Yorumu siler, hesabı engeller ve geceyi normal geçirir. Ancak bu, koordineli bir saldırının ilk işaretidir.</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">340</span> <span class="stat-label">Yorum (çoğu tebrik)</span></div>
+                <div class="stat-item"><span class="stat-number">1</span> <span class="stat-label">Doğrudan tehdit</span></div>
+                <div class="stat-item"><span class="stat-number">Engelleme</span> <span class="stat-label">Baran’ın ilk tepkisi</span></div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZAR – SAAT 08:30</div>
+            <h3>Koordineli Saldırı Başlıyor</h3>
+            <p><span class="actor-badge">DİSCORD SUNUCUSU</span> Kaybeden takımın destekçileri, “Baran’a saldırı” adlı özel bir sunucuda organize olur. Sabah Baran’ın telefonu titremeye başlar: YouTube, Discord, Instagram ve X (eski Twitter) üzerinden aynı anda yüzlerce bildirim gelir.</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">890</span> <span class="stat-label">Olumsuz yorum</span></div>
+                <div class="stat-item"><span class="stat-number">120</span> <span class="stat-label">Dislike bombası</span></div>
+                <div class="stat-item"><span class="stat-number">15</span> <span class="stat-label">“Spam” bildirimi</span></div>
+                <div class="stat-item"><span class="stat-number">4</span> <span class="stat-label">Platform eşzamanlı</span></div>
+            </div>
+            <p>Hedef gösterilen içerikler arasında “Hileci”, “Hak etmeden kazanan”, “Ailesinin parası sayesinde”, “Kanalını kapatalım” gibi mesajlar vardır.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZAR – SAAT 11:15</div>
+            <h3>Doxxing: Gerçek Kimlik İfşa Ediliyor</h3>
+            <p><span class="actor-badge">İFŞA</span> Discord sunucusunda biri turnuva kayıt formunu ele geçirir. Baran’ın <strong>tam adı, okulu ve mahallesinin adı</strong> paylaşılır: <em>“Gerçek adı Baran Şahin. Şehirde X Lisesi’nde okuyor. Mahallesinde bulabilirsiniz.”</em> Bilgiler birkaç saat içinde Discord’tan X’e, oradan Reddit’e yayılır.</p>
+            <div class="warning-box" style="margin-top: 10px;">
+                <h4><i class="fa-solid fa-triangle-exclamation"></i> Kritik An</h4>
+                <p>Doxxing, dijital tartışmayı fiziksel tehlikeye dönüştüren sınır ihlalidir. Baran’ın adı, okulu ve mahallesi artık binlerce kişinin elindedir.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZAR – SAAT 14:00</div>
+            <h3>Okula Sahte İhbar</h3>
+            <p><span class="actor-badge">SAHTE İHBAR</span> Bir Discord üyesi, Baran’ın okulunu arayarak öğrencinin “okulda başkalarını tehdit ettiği” yönünde asılsız bir şikayette bulunur. Okul yönetimi hafta sonu dahi açık olan hattan ihbarı alır ve pazartesi günü için soruşturma başlatılacağını bildirir.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZAR – SAAT 16:30</div>
+            <h3>Aile Harekete Geçiyor</h3>
+            <p><span class="actor-badge">HUKUKİ SÜREÇ BAŞLATILDI</span> Baran’ın babası durumu fark eder. Discord ekran görüntüleri, X paylaşımları ve sahte ihbar kaydı toplanır. Emniyet Müdürlüğü Siber Suçlar Birimi’ne başvurulur. Ekipler Discord sunucu logları ve telefon kayıtları için resmî yazışma başlatır.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> PAZARTESİ – SAAT 09:00</div>
+            <h3>Okul Müdürü Sahte İhbarı Anlıyor</h3>
+            <p><span class="actor-badge">OKUL</span> Baran ve ailesi müdürle görüşür. Sahte ihbar derhal anlaşılır; müdür ifade verir ve okul, sahte ihbar nedeniyle suç duyurusuna destek olacağını bildirir.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> 2 HAFTA SONRA</div>
+            <h3>Hukuki Süreç ve Failler</h3>
+            <p><span class="actor-badge">ADLİ SORUŞTURMA</span> Discord sunucusunun kurucusu ve doxxing’i gerçekleştiren 2 kullanıcı tespit edilir. Biri Baran ile aynı şehirdedir. Şüphelilere <strong>TCK 134 (özel hayatın gizliliğini ihlal), TCK 106 (tehdit) ve TCK 158 (dolandırıcılık – sahte ihbar)</strong> kapsamında işlem başlatılır. Faillerin tamamı reşit olmadığı için dosyalar çocuk mahkemesine sevk edilir.</p>
+            <div class="stats-grid">
+                <div class="stat-item"><span class="stat-number">3</span> <span class="stat-label">Fail tespit edildi</span></div>
+                <div class="stat-item"><span class="stat-number">3</span> <span class="stat-label">Farklı suç tanımı</span></div>
+                <div class="stat-item"><span class="stat-number">Çocuk Mahkemesi</span> <span class="stat-label">Yargılama yeri</span></div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> HASAR RAPORU</div>
+            <h3>Sonuçlar ve Toplumsal Etki</h3>
+            <div class="impact-grid">
+                <div class="impact-card"><i class="fa-solid fa-user"></i> <strong>Baran:</strong> 3 gün yayın yapamadı. “Kanalımı silmeyi düşündüm.” Sonra “Doxxing nedir, nasıl korunursunuz?” başlıklı bir video yayınladı. Video 45.000 izlenmeye ulaştı.</div>
+                <div class="impact-card"><i class="fa-brands fa-youtube"></i> <strong>YouTube:</strong> Koordineli dislike ve yorum saldırısını tespit ederek otomatik filtre devreye soktu.</div>
+                <div class="impact-card"><i class="fa-solid fa-trophy"></i> <strong>Turnuva Organizasyonu:</strong> Kayıt formlarını şifrelemeye geçti, kişisel veri ifşasına karşı yeni bir protokol oluşturdu.</div>
+                <div class="impact-card"><i class="fa-solid fa-chart-line"></i> <strong>Baran’ın kanalı:</strong> Saldırı haberinin ardından abone sayısı 11.000’den 28.000’e çıktı. Toplumun desteği arttı.</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-time"><i class="fa-regular fa-clock"></i> SİBER ZORBALIĞIN BİLEŞENLERİ</div>
+            <h3>Bu Saldırı Neden Bu Kadar Yıkıcı Oldu?</h3>
+            <div class="impact-grid">
+                <div class="impact-card"><i class="fa-solid fa-user-secret"></i> <strong>Anonim Güvenlik Yanılsaması:</strong> Discord’un şifre korumalı sunucularında yapılan paylaşımların takip edilemeyeceği yanılgısı koordineli saldırıyı cesaretlendirdi.</div>
+                <div class="impact-card"><i class="fa-solid fa-arrow-right-arrow-left"></i> <strong>Platform Geçişleri:</strong> Discord’dan X’e, X’ten Reddit’e geçen doxxing bilgisi her platformda yeni bir izleyici kitlesiyle karşılaştı.</div>
+                <div class="impact-card"><i class="fa-solid fa-building"></i> <strong>Sahte Kurumsal Doğrulama:</strong> Okula yapılan sahte ihbar, kurumsal gücün silah olarak kullanılmasının klasik bir örneğiydi.</div>
+                <div class="impact-card"><i class="fa-solid fa-database"></i> <strong>Kişisel Veri Hammaddesi:</strong> Turnuva kayıt formu, genelde güvenli sanılan ancak hedef odaklı saldırıda açık veri kaynağına dönüşen bir boşluk yarattı.</div>
+                <div class="impact-card"><i class="fa-solid fa-chart-simple"></i> <strong>Büyük Sayı Etkisi:</strong> 890 yorum, 120 dislike – her biri ayrı bir birey gibi görünse de koordineli hareket tek bir iradenin ürünüydü.</div>
+            </div>
+        </div>
+
+        <div class="fact-panel" style="margin-top: 40px;">
+            <h4 style="color: var(--gold); font-family: 'Cinzel', serif; margin-bottom: 15px;"><i class="fa-solid fa-check-circle"></i> Doğru Adımlar</h4>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;">✅ Turnuva veya etkinlik kayıt formlarında gerçek okul adı ve mahalle bilgisi paylaşırken bu verilerin ifşa riskini düşün; mümkünse sadece şehir düzeyi bilgi vermek yeterlidir.</li>
+                <li style="margin-bottom: 10px;">✅ Koordineli saldırı yaşıyorsan “koordineli taciz” kategorisinde platforma toplu bildir yap; bu, tekil yorum bildiriminden daha hızlı sonuç verir.</li>
+                <li style="margin-bottom: 10px;">✅ Doxxing gerçekleştiyse: içeriğe bağlı olarak Cumhuriyet savcılığı, emniyet siber suçlar birimi ve ilgili platform olmak üzere üç kanalı eşzamanlı kullan.</li>
+                <li style="margin-bottom: 10px;">✅ Delilleri silme; ekran görüntüleri, URL’ler ve zaman damgaları hukuki süreç için kritik öneme sahiptir.</li>
+                <li style="margin-bottom: 10px;">✅ Sahte ihbar için kuruma bilgi ver; okul, iş yeri veya herhangi bir kurum sahte ihbarı öğrendiklerinde çoğu zaman mağdurun yanında yer alır.</li>
+            </ul>
+            <div style="margin-top: 20px;">
+                <h4 style="color: #ff6b6b; font-family: 'Cinzel', serif; margin-bottom: 15px;"><i class="fa-solid fa-circle-xmark"></i> Yanlış Adımlar</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">❌ Saldırıyı görmezden gelip “zaten biter” diye beklemek; koordineli saldırılar kendi kendine durmaz.</li>
+                    <li style="margin-bottom: 10px;">❌ “Ben zaten gizli hesap kullanıyorum, bulamazlar” diyerek aşırı güvende hissetmek.</li>
+                    <li style="margin-bottom: 10px;">❌ Saldırıyla aynı şiddette karşılık vermek; bu hem hukuki risk yaratır hem de saldırıya ek kitlesellik kazandırır.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box" style="margin-top: 30px;">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> UNUTMAYIN</h4>
+            <p><strong>Doxxing</strong>, dijital bir tartışmayı fiziksel tehlikeye dönüştüren sınır ihlalidir. Birinin adını, okulunu, adresini ya da aile bilgilerini kamuya açacak şekilde paylaşmak, o kişiyi görünmez kılar ve gündelik hayatını tehdit altına sokar. Oyun veya turnuva gibi görünürde zararsız ortamlar, saldırganlar için yeterince gerçek ve kullanışlı veriler içermektedir. <strong>Dijital gizlilik bir seçenek değil; kişisel güvenliği doğrudan koruyan bir sigortadır.</strong></p>
+        </div>
+
+    </div>
+</details>
             </div>
         </section>
 
@@ -1769,7 +2094,64 @@
         <p class="source">Kaynaklar: <a href="https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf" target="_blank" rel="noopener noreferrer">https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf</a> – <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html" target="_blank" rel="noopener noreferrer">https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html</a></p>
     </div>
 </section>
+<!-- 5.1 Podcastler -->
+<section id="podcasts">
+    <div class="content-box">
+        <h2>Podcastler</h2>
+        <p style="font-size: 1rem; margin-bottom: 30px;">Sosyal medya okuryazarlığı, dijital güvenlik ve farkındalık konularında hazırlanmış sesli içerikler. Her bir bölümü dinleyerek konuları daha derinlemesine keşfedebilirsiniz.</p>
 
+        <div class="podcast-list">
+            <!-- Podcast 1 -->
+            <div class="podcast-card">
+                <div class="podcast-meta">
+                    <span class="podcast-number">01</span>
+                    <span class="podcast-duration">18 dk</span>
+                </div>
+                <h3 class="podcast-title">Sosyal Medya ve Gençler: Bilinçli Kullanım</h3>
+                <p class="podcast-description">Gençlerin sosyal medyayı nasıl daha güvenli ve bilinçli kullanabileceği, ebeveynlerin rolü, ekran süresi yönetimi ve dijital iyi oluş üzerine sohbet.</p>
+                <audio controls preload="none" class="podcast-player">
+                    <source src="podcast-episode-1.mp3" type="audio/mpeg">
+                    Tarayıcınız audio elementini desteklemiyor.
+                </audio>
+                <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
+            </div>
+
+            <!-- Podcast 2 -->
+            <div class="podcast-card">
+                <div class="podcast-meta">
+                    <span class="podcast-number">02</span>
+                    <span class="podcast-duration">22 dk</span>
+                </div>
+                <h3 class="podcast-title">Dezenformasyonla Mücadele: Doğrulama Araçları</h3>
+                <p class="podcast-description">Sahte haberleri nasıl tespit ederiz? Teyit.org, doğrulama platformları, görsel tersine arama ve medya okuryazarlığının püf noktaları.</p>
+                <audio controls preload="none" class="podcast-player">
+                    <source src="podcast-episode-2.mp3" type="audio/mpeg">
+                    Tarayıcınız audio elementini desteklemiyor.
+                </audio>
+                <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
+            </div>
+
+            <!-- Podcast 3 -->
+            <div class="podcast-card">
+                <div class="podcast-meta">
+                    <span class="podcast-number">03</span>
+                    <span class="podcast-duration">15 dk</span>
+                </div>
+                <h3 class="podcast-title">Dijital Ayak İzi ve Gizlilik Yönetimi</h3>
+                <p class="podcast-description">Sosyal medyada bıraktığınız izler nelerdir? Kişisel verilerinizi nasıl korursunuz? Gizlilik ayarları, 2FA ve güvenli parola yönetimi.</p>
+                <audio controls preload="none" class="podcast-player">
+                    <source src="podcast-episode-3.mp3" type="audio/mpeg">
+                    Tarayıcınız audio elementini desteklemiyor.
+                </audio>
+                <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
+            </div>
+        </div>
+
+        <div class="fact-panel" style="margin-top: 40px;">
+            <p style="margin-bottom: 0; font-size: 0.9rem;"><i class="fa-regular fa-circle-info"></i> <strong>Not:</strong> Podcast dosyalarının doğru çalışması için yukarıdaki <code>src</code> yollarını kendi .mp3 dosyalarınızın bulunduğu konumla değiştirmeyi unutmayın. Örneğin: <code>src="dosyalar/podcast1.mp3"</code> veya doğrudan bir URL kullanabilirsiniz.</p>
+        </div>
+    </div>
+</section>
         <!-- GÜVENLİK REHBERİ -->
         <section id="safety">
             <div class="content-box">
@@ -1809,7 +2191,7 @@
 
         <!-- FOOTER -->
         <footer>
-            <span class="footer-text">Bu rehber 11. Sınıf Medya Okuryazarlığı dersi kapsamında ders öğretmeni Murat Mutlu tarafından hazırlanmıştır.</span>
+            <span class="footer-text">Bu rehber 11. Sınıf Medya Okuryazarlığı dersi kapsamında Murat Mutlu tarafından hazırlanmıştır.</span>
             <a href="/cdn-cgi/l/email-protection#aac7dfd8cbdeeac1c3d8c1d3cbc7cb84dfc1" class="footer-icon" title="Bize Yazın">
                 <i class="fa-solid fa-envelope"></i>
             </a>
