@@ -190,12 +190,11 @@
         .top-nav-title {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            /* Ekran küçüldükçe font otomatik küçülür ama 0.85rem'in altına inmez, en fazla 1.1rem olur */
             font-size: clamp(0.85rem, 3.5vw, 1.1rem);
             font-weight: 600;
-            white-space: nowrap; /* Asla alt satıra inmemesini sağlar */
+            white-space: nowrap;
             letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Okunabilirliği artırmak için hafif gölge */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .menu-toggle {
             background: transparent;
@@ -373,107 +372,175 @@
 
         .mini-card { background: rgba(255,255,255,0.03); border: 1px solid var(--gold-muted); padding: 15px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 10px; }
         .mini-card strong { color: var(--gold); display: block; margin-bottom: 5px; }
-        /* Podcast Stilleri */
-.podcast-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 20px;
-}
 
-.podcast-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--gold-muted);
-    border-radius: 20px;
-    padding: 25px;
-    transition: all 0.3s ease;
-}
+        /* Podcast Stilleri (güncellendi) */
+        .podcast-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-.podcast-card:hover {
-    background: rgba(212,175,55,0.05);
-    border-color: rgba(212,175,55,0.5);
-}
+        .podcast-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--gold-muted);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
 
-.podcast-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
+        .podcast-card:hover {
+            background: rgba(212,175,55,0.05);
+            border-color: rgba(212,175,55,0.5);
+        }
 
-.podcast-number {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    color: var(--gold);
-    background: rgba(212,175,55,0.15);
-    padding: 4px 12px;
-    border-radius: 30px;
-    letter-spacing: 1px;
-}
+        .podcast-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
 
-.podcast-duration {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.75rem;
-    color: var(--text-gray);
-    background: rgba(255,255,255,0.05);
-    padding: 4px 10px;
-    border-radius: 20px;
-}
+        .podcast-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            background: rgba(212,175,55,0.15);
+            padding: 4px 12px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
 
-.podcast-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
-    color: var(--gold);
-    margin: 10px 0 12px 0;
-}
+        .podcast-duration {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            background: rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
 
-.podcast-description {
-    font-family: 'Lora', serif;
-    font-size: 0.95rem;
-    color: #c0c0c0;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
+        .podcast-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin: 10px 0 12px 0;
+        }
 
-.podcast-player {
-    width: 100%;
-    margin: 15px 0;
-    border-radius: 30px;
-    background: #1a1a1a;
-    outline: none;
-}
+        .podcast-description {
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-/* audio etiketini altın temasına yaklaştırma */
-.podcast-player::-webkit-media-controls-panel {
-    background-color: #1e1e1e;
-}
-.podcast-player::-webkit-media-controls-current-time-display,
-.podcast-player::-webkit-media-controls-time-remaining-display {
-    color: var(--gold);
-}
-.podcast-player::-webkit-media-controls-play-button {
-    background-color: var(--gold);
-    border-radius: 50%;
-}
+        /* Özel Ses Oynatıcı Stilleri (modern) */
+        .custom-audio-player {
+            margin: 15px 0 10px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 40px;
+            padding: 8px 15px;
+            border: 1px solid var(--gold-muted);
+            transition: all 0.3s ease;
+        }
 
-.podcast-credit {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.7rem;
-    color: var(--text-gray);
-    text-align: right;
-    margin-top: 10px;
-    border-top: 1px solid var(--gold-muted);
-    padding-top: 12px;
-}
+        .custom-audio-player:hover {
+            border-color: var(--gold);
+            background: rgba(0,0,0,0.6);
+        }
 
-@media (max-width: 768px) {
-    .podcast-title {
-        font-size: 1.1rem;
-    }
-    .podcast-card {
-        padding: 18px;
-    }
-}
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .play-pause-btn {
+            background: var(--gold);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #000;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .play-pause-btn:hover {
+            transform: scale(1.05);
+            background: #fff;
+            color: var(--gold);
+        }
+
+        .progress-container {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .progress-fill {
+            background: var(--gold);
+            height: 100%;
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            letter-spacing: 0.5px;
+        }
+
+        .current-time {
+            color: var(--gold);
+        }
+
+        @media (max-width: 500px) {
+            .player-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .play-pause-btn {
+                align-self: center;
+            }
+        }
+
+        .podcast-credit {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            text-align: right;
+            margin-top: 10px;
+            border-top: 1px solid var(--gold-muted);
+            padding-top: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .podcast-title {
+                font-size: 1.1rem;
+            }
+            .podcast-card {
+                padding: 18px;
+            }
+        }
+
         /* AKORDİYON STİLLERİ */
         details {
             background: rgba(212, 175, 55, 0.02);
@@ -2094,7 +2161,7 @@
         <p class="source">Kaynaklar: <a href="https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf" target="_blank" rel="noopener noreferrer">https://www.hhs.gov/sites/default/files/sg-youth-mental-health-social-media-advisory.pdf</a> – <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html" target="_blank" rel="noopener noreferrer">https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html</a></p>
     </div>
 </section>
-<!-- 5.1 Podcastler -->
+<!-- 5.1 Podcastler (yeni modern oynatıcı) -->
 <section id="podcasts">
     <div class="content-box">
         <h2>Podcastler</h2>
@@ -2109,10 +2176,23 @@
                 </div>
                 <h3 class="podcast-title">Sosyal Medya ve Gençler: Bilinçli Kullanım</h3>
                 <p class="podcast-description">Gençlerin sosyal medyayı nasıl daha güvenli ve bilinçli kullanabileceği, ebeveynlerin rolü, ekran süresi yönetimi ve dijital iyi oluş üzerine sohbet.</p>
-                <audio controls preload="none" class="podcast-player">
-                    <source src="podcast-episode-1.mp3" type="audio/mpeg">
-                    Tarayıcınız audio elementini desteklemiyor.
-                </audio>
+                
+                <div class="custom-audio-player" data-audio="podcast-episode-1.mp3">
+                    <div class="player-controls">
+                        <button class="play-pause-btn" aria-label="Oynat/Durdur">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
             </div>
 
@@ -2124,10 +2204,23 @@
                 </div>
                 <h3 class="podcast-title">Dezenformasyonla Mücadele: Doğrulama Araçları</h3>
                 <p class="podcast-description">Sahte haberleri nasıl tespit ederiz? Teyit.org, doğrulama platformları, görsel tersine arama ve medya okuryazarlığının püf noktaları.</p>
-                <audio controls preload="none" class="podcast-player">
-                    <source src="podcast-episode-2.mp3" type="audio/mpeg">
-                    Tarayıcınız audio elementini desteklemiyor.
-                </audio>
+                
+                <div class="custom-audio-player" data-audio="podcast-episode-2.mp3">
+                    <div class="player-controls">
+                        <button class="play-pause-btn" aria-label="Oynat/Durdur">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
             </div>
 
@@ -2139,16 +2232,29 @@
                 </div>
                 <h3 class="podcast-title">Dijital Ayak İzi ve Gizlilik Yönetimi</h3>
                 <p class="podcast-description">Sosyal medyada bıraktığınız izler nelerdir? Kişisel verilerinizi nasıl korursunuz? Gizlilik ayarları, 2FA ve güvenli parola yönetimi.</p>
-                <audio controls preload="none" class="podcast-player">
-                    <source src="podcast-episode-3.mp3" type="audio/mpeg">
-                    Tarayıcınız audio elementini desteklemiyor.
-                </audio>
+                
+                <div class="custom-audio-player" data-audio="podcast-episode-3.mp3">
+                    <div class="player-controls">
+                        <button class="play-pause-btn" aria-label="Oynat/Durdur">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span> / <span class="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="podcast-credit">Boğaziçi Koleji Medya Okuryazarlığı Dersi</div>
             </div>
         </div>
 
         <div class="fact-panel" style="margin-top: 40px;">
-            <p style="margin-bottom: 0; font-size: 0.9rem;"><i class="fa-regular fa-circle-info"></i> <strong>Not:</strong> Podcast dosyalarının doğru çalışması için yukarıdaki <code>src</code> yollarını kendi .mp3 dosyalarınızın bulunduğu konumla değiştirmeyi unutmayın. Örneğin: <code>src="dosyalar/podcast1.mp3"</code> veya doğrudan bir URL kullanabilirsiniz.</p>
+            <p style="margin-bottom: 0; font-size: 0.9rem;"><i class="fa-regular fa-circle-info"></i> <strong>Not:</strong> Podcast dosyalarının doğru çalışması için yukarıdaki <code>data-audio</code> değerlerini kendi .mp3 dosyalarınızın bulunduğu konumla değiştirmeyi unutmayın. Örneğin: <code>data-audio="dosyalar/podcast1.mp3"</code> veya doğrudan bir URL kullanabilirsiniz.</p>
         </div>
     </div>
 </section>
@@ -2352,6 +2458,7 @@
             'siber-zorbalik': 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2000',
             'vaka-analizleri': 'https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?q=80&w=2000',
             'ruh-sagligi': 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2000',
+            'podcasts': 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2000',
             'safety': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000',
             'concepts': 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2000'
         };
@@ -2377,6 +2484,73 @@
                 link.classList.remove('active');
                 if (link.getAttribute('href').includes(current)) link.classList.add('active');
             });
+        });
+
+        // ========== YENİ: ÖZEL SES OYNATICI JAVASCRİPTİ ==========
+        document.querySelectorAll('.custom-audio-player').forEach(container => {
+            const audioSrc = container.getAttribute('data-audio');
+            if (!audioSrc) return;
+
+            const audio = new Audio(audioSrc);
+            audio.preload = 'metadata';
+
+            const playBtn = container.querySelector('.play-pause-btn');
+            const progressBar = container.querySelector('.progress-bar');
+            const progressFill = container.querySelector('.progress-fill');
+            const currentTimeSpan = container.querySelector('.current-time');
+            const durationSpan = container.querySelector('.duration');
+
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            audio.addEventListener('loadedmetadata', () => {
+                durationSpan.textContent = formatTime(audio.duration);
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = `${percent}%`;
+                currentTimeSpan.textContent = formatTime(audio.currentTime);
+            });
+
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    // Diğer oynatıcıları durdur
+                    document.querySelectorAll('.custom-audio-player').forEach(other => {
+                        const otherAudio = other.audioObj;
+                        if (otherAudio && otherAudio !== audio && !otherAudio.paused) {
+                            otherAudio.pause();
+                            const otherBtn = other.querySelector('.play-pause-btn i');
+                            otherBtn.className = 'fa-solid fa-play';
+                        }
+                    });
+                    audio.play();
+                    playBtn.querySelector('i').className = 'fa-solid fa-pause';
+                } else {
+                    audio.pause();
+                    playBtn.querySelector('i').className = 'fa-solid fa-play';
+                }
+            });
+
+            progressBar.addEventListener('click', (e) => {
+                const rect = progressBar.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const width = rect.width;
+                const seekTo = (clickX / width) * audio.duration;
+                audio.currentTime = seekTo;
+            });
+
+            audio.addEventListener('ended', () => {
+                playBtn.querySelector('i').className = 'fa-solid fa-play';
+                progressFill.style.width = '0%';
+                currentTimeSpan.textContent = '0:00';
+            });
+
+            container.audioObj = audio;
         });
     </script>
 </body>
